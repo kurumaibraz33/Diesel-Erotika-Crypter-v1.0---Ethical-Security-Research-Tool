@@ -1,97 +1,32 @@
-' Diesel Erotika FUD Crypter v1.0 - Educational Security Research Tool
+Diesel Erotika Crypter v1.0 - Security Research Tool
+Important Disclaimer: This tool is designed solely for legal and ethical security research purposes. Any illegal activities or misuse are strictly prohibited. Users must only use this software within their authorized scope and in compliance with applicable laws.
 
-' ================================================================================
-' 🔐 Legal Notice:
-' This tool is developed exclusively for ethical, legal, and educational use.
-' Unauthorized use for malicious purposes or security evasion violates GitHub's
-' Terms of Service and may breach international laws.
-' ================================================================================
+Description:
+Diesel Erotika Crypter is a tool developed for security professionals and developers to conduct research on software protection and analysis techniques. This project is intended for educational purposes in the fields of software security and reverse engineering.
 
-' Purpose:
-' Diesel Erotika FUD Crypter is a VB.NET-based research utility for:
-' - Studying software obfuscation and anti-analysis techniques.
-' - Demonstrating how basic protection methods work in controlled environments.
-' - Providing an educational reference for reverse engineering studies.
+Features:
 
-' Key Features:
-' - Obfuscation Simulation (byte randomization)
-' - Language Customization (supports English, Arabic, Chinese strings)
-' - Execution Delay Simulation
-' - Virtualized Research Use (recommended in a sandbox or VM)
+Support for .NET and Native files
+Anti-VMware Workstation and Anti-SandBoxie detection (for research purposes only)
+Simulation of disabling Windows Defender and Task Manager (for controlled test environments)
+File hiding and task termination
+Process injection simulation (RegAsm, explorer, svchost)
+Delay addition
+Hidden and normal startup options
+Assembly changer
+Digital signature simulation
+File downloader (for legal files only)
+Code obfuscation
+Random code generation
+Adjustable string lengths and name changes (English, Chinese, Arabic)
+Automatic garbage code reduction and detection
+Usage Terms:
 
-' ❗ IMPORTANT:
-' Use only in isolated, authorized, and secure research environments. The authors
-' disclaim any liability for misuse or unauthorized deployment.
+This tool may only be used in authorized test environments and for legal security research.
+Any malicious use, copyright infringement, or illegal activities are strictly prohibited.
+Users are responsible for complying with local laws when using this software.
+Disclaimer:
+This project is provided solely for educational and research purposes. The developers assume no responsibility for any misuse of this software. Please use this tool only for ethical and legal purposes.
 
-' --------------------------------------------------------------------------------
-' Example Usage:
-' DieselErotikaCrypter.exe --input test.exe --output obfuscated.exe --lang English
-' --------------------------------------------------------------------------------
-
-' 🛠 Requirements:
-' - .NET Framework 4.8+
-' - Windows OS (Recommended: Virtual Machine)
-' - Visual Studio or any VB.NET-compatible IDE
-
-' 🧾 License:
-' MIT License — see LICENSE file for full terms.
-
-' Contact / Issues:
-' Please report issues via GitHub or reach out via Telegram: @YourTelegramHandle
-' ================================================================================
-
-Imports System
-Imports System.IO
-
-Module DieselErotikaCrypter
-
-    Sub Main(args As String())
-        Try
-            Dim inputFile As String = GetArgument(args, "--input", "test.exe")
-            Dim outputFile As String = GetArgument(args, "--output", "obfuscated.exe")
-            Dim lang As String = GetArgument(args, "--lang", "English")
-
-            ' Perform simulated obfuscation
-            ObfuscateFile(inputFile, outputFile)
-
-            ' Simulate configurable features (like delays or string changes)
-            SimulateResearchFeatures(lang)
-
-            Console.WriteLine("[+] Crypter executed successfully (educational use only).")
-        Catch ex As Exception
-            Console.WriteLine("[!] Error: " & ex.Message)
-        End Try
-    End Sub
-
-    Sub ObfuscateFile(inputPath As String, outputPath As String)
-        If Not File.Exists(inputPath) Then
-            Throw New FileNotFoundException("Input file not found.")
-        End If
-        Dim fileBytes As Byte() = File.ReadAllBytes(inputPath)
-        Dim modifiedBytes As Byte() = RandomizeBytes(fileBytes)
-        File.WriteAllBytes(outputPath, modifiedBytes)
-    End Sub
-
-    Function RandomizeBytes(bytes As Byte()) As Byte()
-        Dim rand As New Random()
-        For i As Integer = 0 To bytes.Length - 1
-            bytes(i) = bytes(i) Xor CByte(rand.Next(0, 255))
-        Next
-        Return bytes
-    End Function
-
-    Sub SimulateResearchFeatures(language As String)
-        Console.WriteLine($"[*] Language set to: {language}")
-        Threading.Thread.Sleep(500) ' Simulate delay
-    End Sub
-
-    Function GetArgument(args As String(), flag As String, defaultValue As String) As String
-        For i As Integer = 0 To args.Length - 2
-            If args(i) = flag Then
-                Return args(i + 1)
-            End If
-        Next
-        Return defaultValue
-    End Function
-
-End Module
+Note:
+By using this project, you agree to the terms outlined above. For any questions or feedback, please reach out via @dieselerotika.
