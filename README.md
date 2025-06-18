@@ -144,7 +144,7 @@ Push and open a pull request
 Please ensure your changes align with the ethical and educational scope of the project.
 
 🛑 Reporting Error
-If you suspect misconduct or abuse of this project, please open an issue or contact the maintainers via [@YourTelegramHandle].
+If you suspect misconduct or abuse of this project, please open an issue or contact the maintainers via [@dieselerotika].
 
 🧾 License
 Licensed under the MIT License. You are free to use, modify, and distribute the code for ethical purposes.
